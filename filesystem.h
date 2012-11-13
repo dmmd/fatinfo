@@ -17,6 +17,8 @@ class filesystem{
 	int BPB_FATSz16;
 	int BPB_SecPerTrk;
 	int BPB_NumHeads;
+	long BPB_HiddSec;
+	
 public:
 
 	void getFileSystem() const;
@@ -32,6 +34,7 @@ public:
 	void setBPB_FATSz16(int i);
 	void setBPB_SecPerTrk(int i);
 	void setBPB_NumHeads(int i);
+	void setBPB_HiddSec(long l);
 	
 	void printFS() const;
 };

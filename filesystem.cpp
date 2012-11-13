@@ -53,6 +53,10 @@ void filesystem::setBPB_NumHeads(int i){
 	BPB_NumHeads = i;
 }
 
+void filesystem::setBPB_HiddSec(long l){
+	BPB_HiddSec = l;
+}
+
 void filesystem::printFS() const{
 	cout << "FATVOL INFO\nBS_jmpBoot:\t" << BS_jmpBoot << "\n"
 		<< "BS_OEMName:\t" << BS_OEMName << "\n"
@@ -65,6 +69,7 @@ void filesystem::printFS() const{
 		<< "BPB_Media:\t" << BPB_Media << "\n"
 		<< "BPB_FATSz16:\t" << BPB_FATSz16 << "\n"
 		<< "BPB_SecPerTrk:\t" << BPB_SecPerTrk << "\n"
-		<< "BPB_NumHeads:\t" << BPB_NumHeads
+		<< "BPB_NumHeads:\t" << BPB_NumHeads << "\n"
+		<< "BPB_HiddSec:\t" << BPB_HiddSec
 		<< endl;
 }
