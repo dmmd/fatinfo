@@ -49,3 +49,12 @@ string getCharArrayAscii(unsigned char* chars, string handle){
 int getInt(unsigned char* chars){
 	return 256 * chars[1] + chars[0];
 }
+
+long getLong(unsigned char* buff){
+	long temp;
+	temp = (unsigned long) buff[0];
+	temp |= ((unsigned long) buff[1]) << 8;
+	temp |= ((unsigned long) buff[2]) << 16;
+	temp |= ((unsigned long) buff[3]) << 24;
+	return temp;
+}

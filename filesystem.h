@@ -18,6 +18,8 @@ class filesystem{
 	int BPB_SecPerTrk;
 	int BPB_NumHeads;
 	long BPB_HiddSec;
+	long BPB_TotSec32;
+	string BS_DrvNum;
 	
 public:
 
@@ -35,6 +37,7 @@ public:
 	void setBPB_SecPerTrk(int i);
 	void setBPB_NumHeads(int i);
 	void setBPB_HiddSec(long l);
-	
+	void setBPB_TotSec32(long l);
+	void setBS_DrvNum(string s);
 	void printFS() const;
 };

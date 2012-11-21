@@ -15,4 +15,5 @@ void printCharArrayInt(unsigned char*, string, int size);
 void printCharArrayHex(unsigned char*, string, int size);
 string getCharArrayAscii(unsigned char*, string);
 int getInt(unsigned char*);
+long getLong(unsigned char*);
 #endif

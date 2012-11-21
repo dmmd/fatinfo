@@ -73,18 +73,27 @@ int main (int argc,char* argv[]) {
 	file.read(reinterpret_cast<char*>(buffer), buffersize);
 	f.setBPB_NumHeads(getInt(buffer));
 	
+	buffersize = 4;
+	buffer = new unsigned char[buffersize];
+	file.read(reinterpret_cast<char*>(buffer), buffersize);
+	f.setBPB_HiddSec(getLong(buffer));
+	
+	buffersize = 4;
+	buffer = new unsigned char[buffersize];
+	file.read(reinterpret_cast<char*>(buffer), buffersize);
+	f.setBPB_TotSec32(getLong(buffer));
+	
+	
+	buffersize = 1;
+	buffer = new unsigned char[buffersize];
+	file.read(reinterpret_cast<char*>(buffer), buffersize);
+	ss.str("");
+	ss << setfill ('0') << setw (2) << hex << int(buffer[0]);
+	f.setBS_DrvNum(ss.str());
 	
 		
 	f.printFS();
-	
-	/*
 
-	////
-	int bps = BPB_BytsPerSec - 1;
-	int RootDirSectors = ((BPB_RootEntCnt * 32) + bps) / BPB_BytsPerSec;
-	cout << "RootDirSectors: " << RootDirSectors << endl;
-	
-	*/
 	
 	cout << endl;
 	return EXIT_SUCCESS;

@@ -57,6 +57,14 @@ void filesystem::setBPB_HiddSec(long l){
 	BPB_HiddSec = l;
 }
 
+void filesystem::setBPB_TotSec32(long l){
+	BPB_TotSec32 = l;
+} 
+
+void filesystem::setBS_DrvNum(string s){
+	BS_DrvNum = s;
+}
+
 void filesystem::printFS() const{
 	cout << "FATVOL INFO\nBS_jmpBoot:\t" << BS_jmpBoot << "\n"
 		<< "BS_OEMName:\t" << BS_OEMName << "\n"
@@ -70,6 +78,8 @@ void filesystem::printFS() const{
 		<< "BPB_FATSz16:\t" << BPB_FATSz16 << "\n"
 		<< "BPB_SecPerTrk:\t" << BPB_SecPerTrk << "\n"
 		<< "BPB_NumHeads:\t" << BPB_NumHeads << "\n"
-		<< "BPB_HiddSec:\t" << BPB_HiddSec
+		<< "BPB_HiddSec:\t" << BPB_HiddSec << "\n"
+		<< "BPB_TotSec32:\t" << BPB_TotSec32 << "\n"
+		<< "BS_DrvNum:\t" << BS_DrvNum
 		<< endl;
 }
